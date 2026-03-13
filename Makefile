@@ -5,6 +5,12 @@ CDR=.
 
 INSTALL_DIR=/usr/local/bin
 
+test:
+	go test ./...
+
+fmt:
+	gofmt -w .
+
 build:
 	go build -o $(BD)/$(BIN) $(CDR)/main.go
 

@@ -2,14 +2,14 @@ package cmd
 
 import "github.com/spf13/cobra"
 
-
 func CreateRootCmd() *cobra.Command {
-    cmd := &cobra.Command{ 
-        Use: "brag",
-        Short: "Your bragdoc at a distance command",
-    }
+	cmd := &cobra.Command{
+		Use:   "brag",
+		Short: "Your bragdoc at a distance command",
+	}
 
-    cmd.AddCommand(CreateInitCmd())
-    
-    return cmd
+	cmd.AddCommand(CreateInitCmd())
+	cmd.AddCommand(CreateCreateCmd())
+
+	return cmd
 }

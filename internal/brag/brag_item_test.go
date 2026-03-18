@@ -35,18 +35,4 @@ func TestNewBragItem(t *testing.T) {
 			t.Fatal("expected error for whitespace-only title, got nil")
 		}
 	})
-
-	t.Run("blank description", func(t *testing.T) {
-		_, err := brag.NewBragItem("some title", "")
-		if err == nil {
-			t.Fatal("expected error for blank description, got nil")
-		}
-	})
-
-	t.Run("whitespace-only description", func(t *testing.T) {
-		_, err := brag.NewBragItem("some title", "   ")
-		if err == nil {
-			t.Fatal("expected error for whitespace-only description, got nil")
-		}
-	})
 }

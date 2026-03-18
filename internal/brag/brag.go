@@ -52,7 +52,7 @@ func (b *Brag) Create(title, description string) error {
 	return b.store.Save(item)
 }
 
-func (b *Brag) List(name string, presenter Presenter) ([]BragItem, error) {
+func (b *Brag) List(presenter Presenter) ([]BragItem, error) {
 	if err := b.checkInitialized(); err != nil {
 		return nil, err
 	}

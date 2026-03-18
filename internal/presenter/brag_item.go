@@ -13,7 +13,7 @@ const (
 	ansiBold   = "\033[1m"
 	ansiDim    = "\033[2m"
 	ansiYellow = "\033[33m"
-    ansiBlue   = "\033[34m"
+	ansiBlue   = "\033[34m"
 )
 
 var graphColors = []string{
@@ -30,13 +30,13 @@ func NewTextPresenter() *TextPresenter {
 }
 
 func (bi *TextPresenter) Present(item brag.BragItem) error {
-    fmt.Println()
+	fmt.Println()
 	fmt.Printf("%spath %s%s\n", ansiYellow+ansiBold, item.Path, ansiReset)
 	fmt.Printf("%sTitle:        %s%s\n", ansiBlue+ansiBold, item.Title, ansiReset)
 	if item.Description != "" {
-        fmt.Printf("Description:  %s\n", item.Description)
+		fmt.Printf("Description:  %s\n", item.Description)
 	}
-    fmt.Printf("Created At:   %s\n", item.CreatedAt.Format("02/01/2006 15:04:05"))
+	fmt.Printf("Created At:   %s\n", item.CreatedAt.Format("02/01/2006 15:04:05"))
 	fmt.Println()
 
 	return nil

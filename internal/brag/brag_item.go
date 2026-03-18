@@ -20,7 +20,7 @@ func NewBragItem(title, description string) (*BragItem, error) {
 
 	return &BragItem{
 		Title:       title,
-		Description: description,
+        Description: strings.TrimSpace(description),
 		Path:        "",
 		CreatedAt:   time.Now(),
 	}, nil

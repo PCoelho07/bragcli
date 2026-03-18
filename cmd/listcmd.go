@@ -21,7 +21,7 @@ func CreateListCmd() *cobra.Command {
 				return err
 			}
 
-			_, err = brag.New(s).List(name, presenter.NewTextPresenter())
+			_, err = brag.New(s).List(presenter.NewTextPresenter())
 			if err != nil {
 				return err
 			}

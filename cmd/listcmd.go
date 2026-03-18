@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"brag/internal/brag"
+	"brag/internal/presenter"
 	"brag/internal/store"
-	"fmt"
 
 	"github.com/spf13/cobra"
 )
@@ -21,13 +21,9 @@ func CreateListCmd() *cobra.Command {
 				return err
 			}
 
-			list, err := brag.New(s).List(name)
+			_, err = brag.New(s).List(name, presenter.NewTextPresenter())
 			if err != nil {
 				return err
-			}
-
-			for _, l := range list {
-				fmt.Printf("Title: %s, Description: %s, Created At: %s\n", l.Title, l.Description, l.CreatedAt.Format("01/02/2006 15:04:05"))
 			}
 			return nil
 		},

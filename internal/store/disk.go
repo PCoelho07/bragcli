@@ -82,6 +82,7 @@ func (d *Disk) ReadAll() ([]brag.BragItem, error) {
 			return nil, fmt.Errorf("cannot parse file %s: %v", filePath, err)
 		}
 
+		bragItem.Path = filePath
 		bragItemList = append(bragItemList, bragItem)
 	}
 

@@ -10,6 +10,7 @@ type BragItem struct {
 	Title       string
 	Description string
 	CreatedAt   time.Time
+	Path        string
 }
 
 func NewBragItem(title, description string) (*BragItem, error) {
@@ -17,13 +18,10 @@ func NewBragItem(title, description string) (*BragItem, error) {
 		return nil, errors.New("title cannot be blank")
 	}
 
-	if strings.TrimSpace(description) == "" {
-		return nil, errors.New("description cannot be blank")
-	}
-
 	return &BragItem{
 		Title:       title,
 		Description: description,
+		Path:        "",
 		CreatedAt:   time.Now(),
 	}, nil
 }
